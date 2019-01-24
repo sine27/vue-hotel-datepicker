@@ -81,8 +81,10 @@
       <div class="box">
         <h3>Allow setting a default date range ( can be used to set a range from a url param )</h3>
         <DatePicker
-          :startingDateValue="new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate())"
-          :endingDateValue="new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate() + 5)"
+          :startDate="new Date('2019-01-24')"
+                               :endDate="new Date('2019-08-29')"
+                               :startingDateValue="new Date('2019-02-13') || null"
+                               :endingDateValue="new Date('2019-02-21') || null"
         />
       </div>
 
@@ -170,36 +172,48 @@
 </template>
 
 <script>
-  import DatePicker from 'components/DatePicker.vue';
+import DatePicker from "components/DatePicker.vue";
 
-  export default {
-    components: {
-      DatePicker
-    },
+export default {
+  components: {
+    DatePicker
+  },
 
-    data() {
-      return {
-        ptPT: {
-          night: 'Noite',
-          nights: 'Noites',
-          'day-names': ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
-          'check-in': 'Chegada',
-          'check-out': 'Partida',
-          'month-names': ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
-        },
-      };
-    }
-  };
-
+  data() {
+    return {
+      ptPT: {
+        night: "Noite",
+        nights: "Noites",
+        "day-names": ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"],
+        "check-in": "Chegada",
+        "check-out": "Partida",
+        "month-names": [
+          "Janeiro",
+          "Fevereiro",
+          "Março",
+          "Abril",
+          "Maio",
+          "Junho",
+          "Julho",
+          "Agosto",
+          "Setembro",
+          "Outubro",
+          "Novembro",
+          "Dezembro"
+        ]
+      }
+    };
+  }
+};
 </script>
 
 <style>
-  body,
-  html {
-    font-family: 'Source Sans Pro', sans-serif;
-  }
+body,
+html {
+  font-family: "Source Sans Pro", sans-serif;
+}
 
-  .box {
-    width: 100%;
-  }
+.box {
+  width: 100%;
+}
 </style>
